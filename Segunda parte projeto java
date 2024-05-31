@@ -1,0 +1,18 @@
+package com.mycompany.Tabelinha;
+
+
+public class Pjtabela {
+    
+    public static void main(String[] args) {
+        Tabelinha c1 = new Tabela();
+        c1.login= "professor";
+        c1.curso= "leciona curso";
+        c1.ativo= true;
+        c1.salas= "salas disponiveis";
+        c1.datas= "datas disponiveis";
+        c1.turmas= "codigo da sala";
+        c1.alugar();
+        c1.status();
+    }
+    
+}
