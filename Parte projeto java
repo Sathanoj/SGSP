@@ -1,0 +1,28 @@
+package com.mycompany.tabelinha;
+
+
+public class Tabelinha {
+    String cadastro;
+    String Tabela;
+    float login;
+    int senha;
+    boolean ativo;
+    void status(){
+        System.out.println("tabela= "+ this.Tabela);
+        System.out.println("cadastro= "+ this.cadastro);
+        System.out.println("login= "+ this.login);
+        System.out.println("senha= "+ this.senha);
+        System.out.println("esta ativo?"+ this.ativo);}
+    void cadastrar(){
+        if(this.ativo==true){
+            System.out.println( "posso pegar uma sala");
+        }else{
+            System.out.println( "pode pegar");
+                 }
+    }
+    void ativo(){
+        this.ativo=true;
+    }
+    void desativado(){
+        this.ativo=false;
+        
