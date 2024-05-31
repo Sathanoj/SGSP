@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectionToApp {
-    private Connection connection;
+    private final Connection connection;
     
     public ConnectionToApp() {
         connection = DataBase.getConnection();
