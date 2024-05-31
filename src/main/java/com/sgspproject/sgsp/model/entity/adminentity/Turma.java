@@ -11,7 +11,7 @@ public class Turma {
     private int id;
     private int numeroAlunos;
     private List<Professor> professor;
-    private Disciplina disciplina;
+    private Curso curso;
 
     public int getId() {
         return id;
@@ -37,17 +37,17 @@ public class Turma {
         this.professor = professor;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 
     @Override
     public String toString() {
-        return "Turma{" + "id=" + id + ", numeroAlunos=" + numeroAlunos + ", professor=" + professor + ", disciplina=" + disciplina + '}';
+        return "Turma{" + "id=" + id + ", numeroAlunos=" + numeroAlunos + ", professor=" + professor + ", disciplina=" + curso + '}';
     }
     
     

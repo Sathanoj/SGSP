@@ -4,7 +4,7 @@
  */
 package com.sgspproject.sgsp.model.entity;
 
-import com.sgspproject.sgsp.model.entity.adminentity.Disciplina;
+import com.sgspproject.sgsp.model.entity.adminentity.Curso;
 import com.sgspproject.sgsp.model.entity.adminentity.Turma;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class Professor extends Usuario{
 
     private int matricula;
-    private List<Disciplina> disciplinas;
+    private List<Curso> cursos;
     private List<Turma> turmas;
 
     public List<Turma> getTurmas() {
@@ -34,12 +34,12 @@ public class Professor extends Usuario{
         this.matricula = matricula;
     }
 
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
+    public List<Curso> getCursos() {
+        return cursos;
     }
 
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
     
     
