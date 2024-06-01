@@ -1,4 +1,3 @@
-
 package com.sgspproject.sgsp.database;
 
 import java.sql.Connection;
@@ -25,5 +24,4 @@ public class ConnectionToApp {
         
         return resultSet;
     }
-    
 }
