@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author jonat
  */
-public class CRUDImplement implements CRUD{
+public class CRUDImplement implements CRUD {
 
     @Override
     public List<Curso> getAllCursos() {
@@ -22,8 +22,10 @@ public class CRUDImplement implements CRUD{
         try {
             while(resultSet.next()) {
                 String stringData = resultSet.getString("nome_curso");
+                String intData = resultSet.getString("disciplina_id");
                 Curso cursoData = new Curso();
                 cursoData.setNome(stringData);
+                cursoData.setCursoId(Integer.parseInt(intData));
                 cursos.add(cursoData);
             }
         }catch (SQLException e) {
