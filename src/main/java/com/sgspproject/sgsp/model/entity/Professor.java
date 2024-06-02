@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.sgspproject.sgsp.model.entity;
 
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
@@ -12,7 +8,7 @@ import java.util.List;
  *
  * @author jonat
  */
-public class Professor extends Usuario{
+public class Professor extends Usuario {
 
     private int matricula;
     private List<Curso> cursos;
