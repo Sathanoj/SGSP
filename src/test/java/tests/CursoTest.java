@@ -26,8 +26,18 @@ public class CursoTest {
     }
     
     @Test
+    public void testGetAllProfessores() {
+        service = new CRUDService(new CRUDImplement());
+        List<Professor> professores = service.getAllProfessores();
+        for (int i = 0; i < professores.size(); i++) {
+            System.out.println(professores.get(i));
+        }
+        System.out.println(professores.toString());
+    }
+    
+    @Test
     public void testCadastrarProfessor() {
-        Professor professor = new Professor("Humberto", "Comum@dinheiro.br", 663434);
+        Professor professor = new Professor("Emilio", "logia@blabla.com.br", 244);
         service = new CRUDService(new CRUDImplement());
         service.addProfessor(professor);
         System.out.println(professor.toString());

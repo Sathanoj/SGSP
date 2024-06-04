@@ -11,5 +11,6 @@ import java.util.List;
  */
 public interface CRUD {
     public List<Curso> getAllCursos();
+    public List<Professor> getAllProfessores();
     public void addProfessor(Professor professor) throws SQLException;
 }

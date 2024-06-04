@@ -65,4 +65,24 @@ public class CRUDImplement implements CRUD {
         }
     
     }
+
+    @Override
+    public List<Professor> getAllProfessores() {
+        ConnectionToApp cApp = new ConnectionToApp();
+        List<Professor> professores = new ArrayList<>();
+        
+        ResultSet resultSet = cApp.selectQuery("select * from professor");
+        try {
+            while(resultSet.next()) {
+                Professor professor = new Professor();
+                professor.setNome(resultSet.getString("nome"));
+                professor.setMatricula(Integer.parseInt(resultSet.getString("matricula")));
+                professor.setEmail(resultSet.getString("email"));
+                professores.add(professor);                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDImplement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return professores;
+    }
 }

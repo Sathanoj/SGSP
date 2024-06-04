@@ -24,6 +24,10 @@ public class CRUDService {
         return crud.getAllCursos();
     }
     
+    public List<Professor> getAllProfessores() {
+        return crud.getAllProfessores();
+    }
+    
     public void addProfessor(Professor professor) {
         try {
             crud.addProfessor(professor);
