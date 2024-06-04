@@ -4,7 +4,6 @@ import com.sgspproject.sgsp.database.ConnectionToApp;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
 import com.sgspproject.sgsp.model.service.interfaces.CRUD;
-import java.net.ConnectException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,10 +43,10 @@ public class CRUDImplement implements CRUD {
                 }
             }
         }
-        
         return cursos;
     }
     
+    @Override
     public void addProfessor(Professor professor) throws SQLException {
         ConnectionToApp cApp = new ConnectionToApp();
         PreparedStatement preparedStatement = cApp.insertQuery(

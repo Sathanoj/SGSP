@@ -3,6 +3,8 @@ package tests;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
 import com.sgspproject.sgsp.model.service.CRUDImplement;
+import com.sgspproject.sgsp.model.service.CRUDService;
+import com.sgspproject.sgsp.model.service.interfaces.CRUD;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -14,22 +16,20 @@ import org.junit.Test;
  * @author jonat
  */
 public class CursoTest {
+        private CRUDService service;
+        
     @Test
     public void testGetAllCursos() {
-        CRUDImplement select = new CRUDImplement();
-        List<Curso> cursosTest = select.getAllCursos();
+        service = new CRUDService(new CRUDImplement());
+        List<Curso> cursosTest = service.getAllCursos();
         System.out.println(cursosTest.toString());
     }
     
     @Test
     public void testCadastrarProfessor() {
-        Professor professor = new Professor("Alice", "alice@gomes.com", 4321);
-        CRUDImplement insert = new CRUDImplement();
-        try {
-            insert.addProfessor(professor);
-        } catch (SQLException ex) {
-            Logger.getLogger(CursoTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Professor professor = new Professor("Humberto", "Comum@dinheiro.br", 663434);
+        service = new CRUDService(new CRUDImplement());
+        service.addProfessor(professor);
         System.out.println(professor.toString());
     }
 }
