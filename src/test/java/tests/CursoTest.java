@@ -1,14 +1,11 @@
 package tests;
 
+import com.sgspproject.sgsp.model.entity.DayTable;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
 import com.sgspproject.sgsp.model.service.CRUDImplement;
 import com.sgspproject.sgsp.model.service.CRUDService;
-import com.sgspproject.sgsp.model.service.interfaces.CRUD;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.Test;
 
 /**
@@ -41,5 +38,16 @@ public class CursoTest {
         service = new CRUDService(new CRUDImplement());
         service.addProfessor(professor);
         System.out.println(professor.toString());
+    }
+    
+    @Test
+    public void showTableDay() {
+        service = new CRUDService(new CRUDImplement());
+        List<DayTable> dayTables = service.showDayTable();
+        for (int i = 0; i < dayTables.size(); i++) {
+            System.out.println(dayTables.get(i));
+            
+            
+        }
     }
 }

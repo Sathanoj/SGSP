@@ -1,8 +1,10 @@
 package com.sgspproject.sgsp.model.service;
 
 import com.sgspproject.sgsp.database.ConnectionToApp;
+import com.sgspproject.sgsp.model.entity.DayTable;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
+import com.sgspproject.sgsp.model.entity.adminentity.Turma;
 import com.sgspproject.sgsp.model.service.interfaces.CRUD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -84,5 +86,41 @@ public class CRUDImplement implements CRUD {
             Logger.getLogger(CRUDImplement.class.getName()).log(Level.SEVERE, null, ex);
         }
         return professores;
+    }
+
+    @Override
+    public List<DayTable> showDayTable() {
+        List<DayTable> dayTables = new ArrayList<>();
+        ConnectionToApp cApp = new ConnectionToApp();
+        ResultSet rs = cApp.selectQuery(
+            "SELECT DISTINCT\n" +
+            "  curso.nome_curso AS nome_curso,\n" +
+            "  turma.tipo_turma AS tipo_turma,\n" +
+            "  professor.nome AS nome\n" +
+            "FROM curso\n" +
+            "LEFT JOIN turma ON curso.disciplina_id = turma.turma_id\n" +
+            "LEFT JOIN professor ON turma.turma_id = professor.matricula\n" +
+            "GROUP BY curso.nome_curso;");
+        try {
+            while (rs.next()) {
+                String nomeCurso = rs.getString("nome_curso");
+                String tipoTurma = rs.getString("tipo_turma");
+                String nomeProfessor = rs.getString("nome");
+                
+                if (nomeCurso != null && tipoTurma != null && nomeProfessor != null) {
+                    DayTable dayTable = new DayTable();
+                    dayTable.setNomeCurso(nomeCurso);
+                    dayTable.setIdTurma(tipoTurma);
+                    dayTable.setNomeProfessor(nomeProfessor);
+                    dayTables.add(dayTable);
+                }
+            }
+            
+            // Fechar recursos
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDImplement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dayTables;
     }
 }

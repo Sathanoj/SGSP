@@ -1,5 +1,6 @@
 package com.sgspproject.sgsp.model.service;
 
+import com.sgspproject.sgsp.model.entity.DayTable;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
 import com.sgspproject.sgsp.model.service.interfaces.CRUD;
@@ -34,6 +35,10 @@ public class CRUDService {
         } catch (SQLException ex) {
             Logger.getLogger(CRUDService.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public List<DayTable> showDayTable() {
+        return crud.showDayTable();
     }
         
 }
