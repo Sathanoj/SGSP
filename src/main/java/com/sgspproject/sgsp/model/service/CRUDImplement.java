@@ -4,7 +4,6 @@ import com.sgspproject.sgsp.database.ConnectionToApp;
 import com.sgspproject.sgsp.model.entity.DayTable;
 import com.sgspproject.sgsp.model.entity.Professor;
 import com.sgspproject.sgsp.model.entity.adminentity.Curso;
-import com.sgspproject.sgsp.model.entity.adminentity.Turma;
 import com.sgspproject.sgsp.model.service.interfaces.CRUD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

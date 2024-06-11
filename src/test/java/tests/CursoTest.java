@@ -46,8 +46,6 @@ public class CursoTest {
         List<DayTable> dayTables = service.showDayTable();
         for (int i = 0; i < dayTables.size(); i++) {
             System.out.println(dayTables.get(i));
-            
-            
         }
     }
 }
